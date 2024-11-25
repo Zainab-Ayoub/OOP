@@ -9,9 +9,13 @@
 using namespace std;
 
 class Book{
+    private:
+        int bookID, pages, price;
 
+    public:
+            
 };
 
 int main(){
-    
+
 }
