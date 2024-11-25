@@ -22,7 +22,12 @@ class Book{
             cin>>pages;        
             cout<<"Enter price: ";
             cin>>price;        
-        }        
+        } 
+        void show(){
+            cout<<"ID: "<<bookID;        
+            cout<<"Pages: "<<pages;        
+            cout<<"Price: "<<price;        
+        }          
 };
 
 int main(){
