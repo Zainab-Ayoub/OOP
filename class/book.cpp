@@ -32,7 +32,10 @@ class Book{
             bookID = id;
             pages = pg;
             price = pr;
-        }        
+        } 
+        int getPrice(){
+            return price;
+        }       
 };
 
 int main(){
