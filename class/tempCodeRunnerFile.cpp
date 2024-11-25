@@ -42,10 +42,10 @@ int main(){
     Book b1, b2;
     int bookID, pages, price;
     
-    cout<<"Enter Book 1 Details: "<<endl;
+    cout<<"Enter Book 1 Details: ";
     b1.get();
     
-    cout<<"Enter Book 2 Details: "<<endl;
+    cout<<"Enter Book 2 Details: ";
     cout<<"Enter ID: ";
     cin>>bookID;
     cout<<"Enter pages: ";
@@ -56,9 +56,7 @@ int main(){
     
     cout<<endl;
 
-    cout<<"Book 1 Details: "<<endl;
     b1.show();
-    cout<<"Book 2 Details: "<<endl;
     b2.show();
 
     if(b1.getPrice() > b2.getPrice()){
