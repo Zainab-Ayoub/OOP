@@ -5,3 +5,13 @@
 // The set() function is used to set the values of data members using parameters
 // getPrice() function is used to return the value of Price.
 
+#include<iostream>
+using namespace std;
+
+class Book{
+
+};
+
+int main(){
+    
+}
