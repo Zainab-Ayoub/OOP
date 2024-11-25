@@ -27,7 +27,12 @@ class Book{
             cout<<"ID: "<<bookID;        
             cout<<"Pages: "<<pages;        
             cout<<"Price: "<<price;        
-        }          
+        }  
+        void set(int id, int pg, int pr){
+            bookID = id;
+            pages = pg;
+            price = pr;
+        }        
 };
 
 int main(){
