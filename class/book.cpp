@@ -16,7 +16,12 @@ class Book{
 
     public:
         void get(){
-
+            cout<<"Enter ID: ";
+            cin>>bookID;        
+            cout<<"Enter pages: ";
+            cin>>pages;        
+            cout<<"Enter price: ";
+            cin>>price;        
         }        
 };
 
