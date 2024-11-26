@@ -44,5 +44,9 @@ class Result{
 };
 
 int main(){
-
+    Result student;
+    student.info();
+    student.show();
+    cout<<"Total Marks: "<<student.total()<<endl;
+    cout<<"Average: "<<student.average()<<endl;
 }
