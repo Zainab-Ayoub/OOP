@@ -32,8 +32,9 @@ class Result{
             }
             return t;
         }
-        int average(){
-            int a=0, t=0;
+        float average(){
+            float a=0;
+            int t=0;
             for(int i=0; i<3; i++){
                 t += m[i];
             }
