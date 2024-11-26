@@ -9,7 +9,7 @@ class Result{
     public:
         void info(){
             cout<<"Enter name: ";
-            cin>>n;
+            getline(cin,n);
             cout<<"Enter roll number: ";
             cin>>r;
             cout<<"Enter marks: ";
@@ -25,6 +25,13 @@ class Result{
                 cout<<m[i]<<endl;
             }
         } 
+        int total(){
+            int t=0;
+            for(int i=0; i<3; i++){
+                t += m[i];
+            }
+            return t;
+        }
 };
 
 int main(){
