@@ -16,7 +16,15 @@ class Result{
             for(int i=0; i<3; i++){
                 cin>>m[i];
             }
-        }    
+        }   
+        void show(){
+            cout<<"Name: "<<n<<endl;
+            cout<<"Roll Number: "<<r<<endl;
+            cout<<"Marks: "<<endl;
+            for(int i=0; i<3; i++){
+                cout<<m[i]<<endl;
+            }
+        } 
 };
 
 int main(){
