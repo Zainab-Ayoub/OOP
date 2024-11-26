@@ -32,6 +32,14 @@ class Result{
             }
             return t;
         }
+        int average(){
+            int a=0, t=0;
+            for(int i=0; i<3; i++){
+                t += m[i];
+            }
+            a = t/3;
+            return a;
+        }
 };
 
 int main(){
