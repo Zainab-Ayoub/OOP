@@ -32,3 +32,23 @@ class Time{
             }
         } 
 };
+
+int main(){
+    int c;
+    Time obj;
+    obj.show();
+    cout<<"Press 1 to increment minutes \n Press 2 to decrement minutes"<<endl;
+    cin>>c;
+    switch(c){
+        case 1:
+            ++obj;
+            obj.show();
+            break;
+        case 2:
+            --obj;
+            obj.show();
+            break;
+        default:
+            cout<<"Error!"<<endl;        
+    }
+}
