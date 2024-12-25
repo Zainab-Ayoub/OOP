@@ -17,13 +17,25 @@ public:
     // Prefix increment (returning updated value)
     count operator++() {
         ++n; // Increment
-        return *this; // Return updated object
+		return *this; // Return updated object
     }
 
     // Postfix increment (returning original value)
     count operator++(int) {
         count temp = *this; // Store current state
         ++n; // Increment the value
+        return temp; // Return original state
+    }
+    // Prefix decrement (returning updated value)
+    count operator--() {
+        --n; // decrement
+		return *this; // Return updated object
+    }
+
+    // Postfix decrement (returning original value)
+    count operator--(int) {
+        count temp = *this; // Store current state
+        --n; // Decrement the value
         return temp; // Return original state
     }
 };
@@ -48,6 +60,22 @@ int main() {
     // Assign postfix increment result
     c = obj++;
     c.show();
+    
+    // Prefix decrement
+    --obj;
+    obj.show();
 
-    return 0;
+    // Postfix decrement
+    obj--;
+    obj.show();
+
+    // Assign prefix decrement result
+    a = --obj;
+    a.show();
+
+    // Assign postfix decrement result
+    c = obj--;
+    c.show();
+    
+    return 0;
 }
