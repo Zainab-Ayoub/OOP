@@ -1,15 +1,11 @@
 #include<iostream>
 using namespace std;
-/*
-return_type operator op()
-{
-Body
-}*/
-class add{
+
+class arithmetic{
 private:
 	int a, b, c;
 	public:
-		add(){
+		arithmetic(){
 			a=b=c=0;
 		}
 		void in()
@@ -18,30 +14,56 @@ private:
 			cin>>a;
 			cout<<"b=";
 			cin>>b;
-				cout<<"c=";
-			cin>>c;
 		}
 		void show()
 		{
 			cout<<"a="<<a<<endl;
 			cout<<"b="<<b<<endl;
-			cout<<"c="<<c<<endl;
 		}
-		add operator + (add p){
-			add temp;
+		arithmetic operator + (arithmetic p){
+			arithmetic temp;
 			temp.a=p.a+a;
 			temp.b=p.b+b;
-			temp.c=p.c+c;
+			return temp;
+			
+		}
+		arithmetic operator - (arithmetic p){
+			arithmetic temp;
+			temp.a=a-p.a;
+			temp.b=b-p.b;
+			return temp;
+			
+		}
+		arithmetic operator * (arithmetic p){
+			arithmetic temp;
+			temp.a=p.a*a;
+			temp.b=p.b*b;
+			return temp;
+			
+		}
+		arithmetic operator / (arithmetic p){
+			arithmetic temp;
+			temp.a=a/p.a;
+			temp.b=b/p.b;
 			return temp;
 			
 		}
 };
 int main (){
-	add x,y,z, t;
+	arithmetic x,y,z;
+	cout<<"Enter Values: "<<endl;
 	x.in();
 	y.in();
-	t.in();
-	z=x+y+t;
+	cout<<"Addition: "<<endl;
+	z=x+y;
 	z.show();
-	return 0;
+	cout<<"Subtraction: "<<endl;
+	z=x-y;
+	z.show();
+	cout<<"Multiplication: "<<endl;
+	z=x*y;
+	z.show();
+	cout<<"Division: "<<endl;
+	z=x/y;
+	z.show();
 }
