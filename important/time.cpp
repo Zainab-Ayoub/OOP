@@ -7,7 +7,7 @@ class Time{
     public:
         Time(){
             hr=5;
-            min=45;
+            min=58;
             sec=55;
         }    
         void show(){
@@ -17,11 +17,12 @@ class Time{
         }
         Time operator++(){
             ++min;
-            if(min>60){
+            if(min>59){
                 min=0;
                 sec=0;
                 ++hr;
             }
+            return *this;
         } 
         Time operator--(){
             --min;
@@ -30,6 +31,7 @@ class Time{
                 sec=59;
                 --hr;
             }
+            return *this;
         } 
 };
 
@@ -37,17 +39,20 @@ int main(){
     int c;
     Time obj;
     obj.show();
-    cout<<"Press 1 to increment minutes \n Press 2 to decrement minutes"<<endl;
+    temp:
+    cout<<"Press 1 to increment minutes \nPress 2 to decrement minutes \nPress 3 to exit the program"<<endl;
     cin>>c;
     switch(c){
         case 1:
             ++obj;
             obj.show();
-            break;
+            goto temp;
         case 2:
             --obj;
             obj.show();
-            break;
+            goto temp;
+        case 3:
+            cout<<"Program Exited!"<<endl;    
         default:
             cout<<"Error!"<<endl;        
     }
