@@ -23,4 +23,12 @@ class Time{
                 ++hr;
             }
         } 
+        Time operator--(){
+            --min;
+            if(min<0){
+                min=59;
+                sec=59;
+                --hr;
+            }
+        } 
 };
