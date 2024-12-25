@@ -77,5 +77,4 @@ int main() {
     c = obj--;
     c.show();
     
-    return 0;
 }
