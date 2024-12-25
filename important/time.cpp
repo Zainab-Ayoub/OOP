@@ -52,7 +52,8 @@ int main(){
             obj.show();
             goto temp;
         case 3:
-            cout<<"Program Exited!"<<endl;    
+            cout<<"Program Exited!"<<endl;   
+            break; 
         default:
             cout<<"Error!"<<endl;        
     }
