@@ -46,7 +46,7 @@ public:
     }
 
     // Overloaded + operator to add balances of two accounts
-    float operator+(const bankAccount& other) const {
+    float operator+(bankAccount &other) {
         return balance_amount_in_the_account + other.balance_amount_in_the_account;
     }
 };
