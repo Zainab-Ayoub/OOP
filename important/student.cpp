@@ -15,6 +15,26 @@ class Student{
             marks[1]=14;
             marks[2]=9;
         }   
+        void get(){
+            cout<<"Enter name: ";
+            cin>>studentName; 
+            cout<<"Enter class: ";
+            cin>>className; 
+            cout<<"Enter roll number: ";
+            cin>>rollNumber; 
+            cout<<"Enter marks for each subject: "<<endl;
+            for(int i=0; i<3; i++){
+                cin>>marks[i];
+            }
+        }
+        void set(string s, string c, int r, int m[]){
+            studentName=s;    
+            className=c;    
+            rollNumber=r;
+            for(int i=0; i<3; i++){
+                marks[i]=m[i];
+            }    
+        }
         void calculation(){
             for(int i=0; i<3; i++){
                 if (marks[i]>=13 && marks[i]<=15)
@@ -39,6 +59,7 @@ class Student{
             else
                 overallGrade='F';
         }      
+
 };
 
 int main(){
