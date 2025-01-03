@@ -75,5 +75,14 @@ class Student{
 };
 
 int main(){
-
+    int m[3]={13, 11, 7};
+    Student first, second, third;
+    first.calculation();
+    first.display();
+    second.get();
+    second.calculation();
+    second.display();
+    third.set("Noor", "BSCS", 3, m);
+    third.calculation();
+    third.display();
 }
