@@ -4,7 +4,7 @@ using namespace std;
 class Student{
     private:
         string studentName, className;
-        int rollNumber, marks[3];
+        int rollNumber, marks[3], totalMarks=0;
         char grade[3], overallGrade;
     public:
         Student(){
@@ -46,15 +46,14 @@ class Student{
                 else    
                     grade[i]='F';        
             }
-            int points=0;
             for(int i=0; i<3; i++){
-                points += marks[i];
+                totalMarks += marks[i];
             }
-            if (points>30 && points<=45)
+            if (totalMarks>30 && totalMarks<=45)
                 overallGrade='A';
-            else if (points>20 && points<=30)
+            else if (totalMarks>20 && totalMarks<=30)
                 overallGrade='B';
-            else if (points>10 && points<=30)
+            else if (totalMarks>10 && totalMarks<=30)
                 overallGrade='C';
             else
                 overallGrade='F';
@@ -69,8 +68,11 @@ class Student{
             }
             cout<<"Overall Grade: "<<overallGrade;
         }
-        char getOverallGrade(){
-            return overallGrade;
+        char getTotalMarks(){
+            return totalMarks;
+        }
+        string getName(){
+            return studentName;
         }
 };
 
@@ -79,10 +81,20 @@ int main(){
     Student first, second, third;
     first.calculation();
     first.display();
+    cout<<endl;
     second.get();
     second.calculation();
     second.display();
+    cout<<endl;
     third.set("Noor", "BSCS", 3, m);
     third.calculation();
     third.display();
+    cout<<endl;
+    if(second.getTotalMarks() > third.getTotalMarks()){
+        cout<<second.getName()<<" has higher marks than "<<third.getName()<<endl;
+    } else if(second.getTotalMarks() < third.getTotalMarks()){
+        cout<<third.getName()<<" has higher marks than "<<second.getName()<<endl;
+    } else{
+        cout<<"Both "<<second.getName()<<" & "<<third.getName()<<" have equal marks."<<endl;
+    }
 }
