@@ -17,7 +17,7 @@ class Student{
         }   
         void get(){
             cout<<"Enter name: ";
-            cin>>studentName; 
+            getline(cin,studentName); 
             cout<<"Enter class: ";
             cin>>className; 
             cout<<"Enter roll number: ";
@@ -53,7 +53,7 @@ class Student{
                 overallGrade='A';
             else if (totalMarks>20 && totalMarks<=30)
                 overallGrade='B';
-            else if (totalMarks>10 && totalMarks<=30)
+            else if (totalMarks>10 && totalMarks<=20)
                 overallGrade='C';
             else
                 overallGrade='F';
@@ -68,7 +68,7 @@ class Student{
             }
             cout<<"Overall Grade: "<<overallGrade;
         }
-        char getTotalMarks(){
+        int getTotalMarks(){
             return totalMarks;
         }
         string getName(){
