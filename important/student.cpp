@@ -8,12 +8,13 @@ class Student{
         char grade[3], overallGrade;
     public:
         Student(){
-            studentName="xyz";
-            className="abc";
-            rollNumber=1;
-            marks[0]=10;
-            marks[1]=14;
-            marks[2]=9;
+            studentName="unknown";
+            className="unknown";
+            rollNumber=0;
+            for (int i=0 ; i<3; i++) {
+                marks[i] = 0;
+            }
+
         }   
         void get(){
             cout<<"Enter name: ";
@@ -78,23 +79,21 @@ class Student{
 
 int main(){
     int m[3]={13, 11, 7};
-    Student first, second, third;
-    first.calculation();
-    first.display();
+    Student obj1, obj2;
+
+    obj1.get();
+    obj1.calculation();
+    obj1.display();
     cout<<endl;
-    second.get();
-    second.calculation();
-    second.display();
+    obj2.set("Noor", "BSCS", 3, m);
+    obj2.calculation();
+    obj2.display();
     cout<<endl;
-    third.set("Noor", "BSCS", 3, m);
-    third.calculation();
-    third.display();
-    cout<<endl;
-    if(second.getTotalMarks() > third.getTotalMarks()){
-        cout<<second.getName()<<" has higher marks than "<<third.getName()<<endl;
-    } else if(second.getTotalMarks() < third.getTotalMarks()){
-        cout<<third.getName()<<" has higher marks than "<<second.getName()<<endl;
+    if(obj1.getTotalMarks() > obj2.getTotalMarks()){
+        cout<<obj1.getName()<<" has higher marks than "<<obj2.getName()<<endl;
+    } else if(obj1.getTotalMarks() < obj2.getTotalMarks()){
+        cout<<obj2.getName()<<" has higher marks than "<<obj1.getName()<<endl;
     } else{
-        cout<<"Both "<<second.getName()<<" & "<<third.getName()<<" have equal marks."<<endl;
+        cout<<"Both "<<obj1.getName()<<" & "<<obj2.getName()<<" have equal marks."<<endl;
     }
 }
