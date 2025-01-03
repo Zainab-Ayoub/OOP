@@ -59,7 +59,19 @@ class Student{
             else
                 overallGrade='F';
         }      
-
+        void display(){
+            cout<<"Name: "<<studentName<<endl;
+            cout<<"Class: "<<className<<endl;
+            cout<<"Roll Number: "<<rollNumber<<endl;
+            cout<<"Marks & Grade of each subject (respectively): "<<endl;
+            for(int i=0; i<3; i++){
+                cout<<marks[i]<<"\t"<<grade[i]<<endl;
+            }
+            cout<<"Overall Grade: "<<overallGrade;
+        }
+        char getOverallGrade(){
+            return overallGrade;
+        }
 };
 
 int main(){
