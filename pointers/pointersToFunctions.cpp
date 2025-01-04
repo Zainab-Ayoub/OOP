@@ -51,5 +51,6 @@ int main()
 	//obj.show();
 	A *newObj = obj.setData4(&x,&y);
 	newObj->show();
+	delete newObj;
 	return 0;
 }
