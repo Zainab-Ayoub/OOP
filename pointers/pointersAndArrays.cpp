@@ -1,31 +1,31 @@
 #include<iostream>
 using namespace std;
 
-class pointer {
+class pointer{
 private:
-    int po;
+    int x;
 public:
-    void setData(int x) {
-        po = x;
+    void setData(){
+        x = x*2;
     }
-    void getData() {
-        cout << "Enter value: ";
-        cin >> po;
+    void getData(){
+        cout<<"Enter value: ";
+        cin>>x;
     }
-    void show() {
-        cout << "a=" << po << endl;
+    void show(){
+        cout<<"Value="<<x<<endl;
     }
 };
 
-int main() {
+int main(){
     pointer *ptr = new pointer[3];
-    for(int i = 0; i < 3; i++) {
-        cout << "value of: " << i+1 << endl;
-        (ptr + i)->getData();  
+    for(int i=0; i<3; i++){
+        (ptr+i)->getData();
+        (ptr+i)->setData();  
     }
     
-    for(int i = 0; i < 3; i++) {
-        (ptr + i)->show();
+    for(int i=0; i<3; i++){
+        (ptr+i)->show();
     }
     
     delete[] ptr;
