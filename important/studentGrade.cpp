@@ -7,20 +7,23 @@ class Student{
         int rollNumber, marks[3], totalMarks=0;
         char grade[3], overallGrade;
     public:
-        Student(){
-            studentName="unknown";
-            className="unknown";
-            rollNumber=0;
-            for (int i=0 ; i<3; i++) {
+        Student() {
+            studentName = "unknown";
+            className = "unknown";
+            rollNumber = 0;
+            totalMarks = 0;
+            overallGrade = 'F';
+            for(int i=0; i<3; i++){
                 marks[i] = 0;
+                grade[i] = 'F';
             }
-
-        }   
+        }
         void get(){
             cout<<"Enter name: ";
+            //cin.ignore();
             getline(cin,studentName); 
             cout<<"Enter class: ";
-            cin>>className; 
+            getline(cin,className);
             cout<<"Enter roll number: ";
             cin>>rollNumber; 
             cout<<"Enter marks for each subject: "<<endl;
@@ -59,15 +62,15 @@ class Student{
             else
                 overallGrade='F';
         }      
-        void display(){
-            cout<<"Name: "<<studentName<<endl;
-            cout<<"Class: "<<className<<endl;
-            cout<<"Roll Number: "<<rollNumber<<endl;
-            cout<<"Marks & Grade of each subject (respectively): "<<endl;
-            for(int i=0; i<3; i++){
-                cout<<marks[i]<<"\t"<<grade[i]<<endl;
+        void display() {
+            cout << "Name: " << studentName << endl;
+            cout << "Class: " << className << endl;
+            cout << "Roll Number: " << rollNumber << endl;
+            cout << "Marks & Grades:" << endl;
+            for (int i = 0; i < 3; i++) {
+                cout << "Subject " << i + 1 << ": Marks = " << marks[i] << ", Grade = " << grade[i] << endl;
             }
-            cout<<"Overall Grade: "<<overallGrade;
+            cout << "Overall Grade: " << overallGrade << endl;
         }
         int getTotalMarks(){
             return totalMarks;
