@@ -5,8 +5,8 @@ class Student{
     private:
 
     public:
-}
+};
 
 int main(){
-    
+
 }
