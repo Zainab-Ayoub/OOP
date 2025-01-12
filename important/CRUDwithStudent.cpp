@@ -3,7 +3,7 @@ using namespace std;
 
 class Student{
     private:
-        int rollNo, marks, t, r;
+        int rollNo, marks, r;
         string name;
         static int totalStudents;
     public:
@@ -20,21 +20,13 @@ class Student{
             cout<<"Enter marks: ";
             cin>>marks;
             ++totalStudents;
-            t=totalStudents;
         }
-        int readInfo(int r){
-            cout<<"Enter a roll number: ";
-            cin>>r;
-            if (r == rollNo){
-                cout<<"Name: "<<name<<endl;
-                cout<<"Roll Number: "<<rollNo<<endl;
-                cout<<"Marks: "<<marks<<endl;
-            } else{
-                cout<<"Wrong information, please try again!"<<endl;
-            }
+        void readInfo(){
+            cout<<"Name: "<<name<<endl;
+            cout<<"Roll Number: "<<rollNo<<endl;
+            cout<<"Marks: "<<marks<<endl;    
         }
         void updateInfo(){
-            cout<<"Update your name and marks"<<endl;
             cout<<"Enter name: ";
             getline(cin,name);
             cout<<"Enter marks: ";
@@ -44,6 +36,7 @@ class Student{
             name="";
             rollNo=0;
             marks=0;
+            --totalStudents;
             cout<<"Your information has been deleted."<<endl;
         }
         string getName(){
@@ -56,26 +49,103 @@ class Student{
             return marks;
         }
         bool operator> (const Student &x){
-            if (marks > x.marks){
-                return true;
-            } else if (marks < x.marks){
-                return false;
-            }
+            return marks > x.marks;
         }
         bool operator== (const Student &x){
-            if (marks == x.marks){
-                return true;
-            } else{
-                return false;
-            }
+            return marks == x.marks;
         }
         ~Student(){
             cout<<"Objects have been destroyed."<<endl;
         }
+    friend void displayByFriendFunction(Student*);
 };
+
+void displayByFriendFunction(Student* studentArray){
+    cout<<"Name: "<<studentArray->name<<endl;
+    cout<<"Roll Number: "<<studentArray->rollNo<<endl;
+    cout<<"Marks: "<<studentArray->marks<<endl;
+}
 
 int Student :: totalStudents = 0;
 
 int main(){
+    int x, r, num, i;
+    cout<<"Enter number of students: ";
+    cin>>num;
+    
+    Student *studentArray = new Student[num];
 
+    do {
+        cout<<"Press 1 to enter student info.\n"
+        <<"Press 2 to read information of a student.\n"
+        <<"Press 3 to update information of a student.\n"
+        <<"Press 4 to delete information of a student.\n"
+        <<"Press 5 to compare marks of students.\n"
+        <<"Press 6 to check total number of students.\n"
+        <<"Press 6 to exit.\n";
+
+    switch(x){
+            case1:
+                temp:
+                cout<<"Enter a roll number to update info: "; 
+                cin>>r;
+                for(i=1; i<=num; i++){
+                    if (i==r){
+                        studentArray[i].createInfo();
+                    } else{
+                        cout<<"Invalid entry, please try again."<<endl;
+                        goto temp;
+                    }
+                }
+
+            case2:
+                temp:
+                cout<<"Enter a roll number to display info: "; 
+                cin>>r;
+                for(i=1; i<=num; i++){
+                    if (i==r){
+                        studentArray[i].readInfo();
+                    } else{
+                        cout<<"Invalid entry, please try again."<<endl;
+                        goto temp;
+                    }
+                }
+
+            case3:
+                temp:
+                cout<<"Enter a roll number to update info: "; 
+                cin>>r;
+                for(i=1; i<=num; i++){
+                    if (i==r){
+                        studentArray[i].updateInfo();
+                    } else{
+                        cout<<"Invalid entry, please try again."<<endl;
+                        goto temp;
+                    }
+                }
+
+            case4:
+                temp:
+                cout<<"Enter a roll number to delete info: "; 
+                cin>>r;
+                for(i=0; i<num; i++){
+                    if (i==r){
+                        studentArray[i].deleteInfo();
+                    } else{
+                        cout<<"Invalid entry, please try again."<<endl;
+                        goto temp;
+                    }
+                }
+
+            case5:
+                for(i=num; i>0; i--){
+                    cout<<studentArray[i].operator>();
+                }
+            
+            case6:
+                cout<<"Program exited successfully!"<<endl;
+        }
+    } while(x != num+1);   
+    
+    delete [] studentArray;
 }
