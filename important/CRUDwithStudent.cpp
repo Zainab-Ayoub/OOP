@@ -5,7 +5,7 @@ class Student{
     private:
         int rollNo, marks, t, r;
         string name;
-        int totalStudents=0;
+        static int totalStudents;
     public:
         Student(){
             name="unknown";
@@ -59,6 +59,8 @@ class Student{
             cout<<"Objects have been destroyed."<<endl;
         }
 };
+
+int Student :: totalStudents = 0;
 
 int main(){
 
