@@ -56,9 +56,9 @@ class Student{
             return marks;
         }
         bool operator> (const Student &x){
-            if (marks == x.marks){
+            if (marks > x.marks){
                 return true;
-            } else{
+            } else if (marks < x.marks){
                 return false;
             }
         }
