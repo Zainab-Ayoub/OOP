@@ -46,6 +46,15 @@ class Student{
             marks=0;
             cout<<"Your information has been deleted."<<endl;
         }
+        string getName(){
+            return name;
+        }
+        static int getTotalStudents(){
+            return totalStudents;
+        }
+        int getMarks(){
+            return marks;
+        }
         ~Student(){
             cout<<"Objects have been destroyed."<<endl;
         }
