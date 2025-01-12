@@ -46,6 +46,9 @@ class Student{
             marks=0;
             cout<<"Your information has been deleted."<<endl;
         }
+        ~Student(){
+            cout<<"Objects have been destroyed."<<endl;
+        }
 };
 
 int main(){
