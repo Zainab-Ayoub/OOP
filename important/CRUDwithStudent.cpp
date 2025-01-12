@@ -55,6 +55,13 @@ class Student{
         int getMarks(){
             return marks;
         }
+        bool operator> (const Student &x){
+            if (marks == x.marks){
+                return true;
+            } else{
+                return false;
+            }
+        }
         ~Student(){
             cout<<"Objects have been destroyed."<<endl;
         }
