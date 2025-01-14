@@ -4,7 +4,6 @@
 
 #include<iostream>
 using namespace std;
-
 class bankAccount{
     private:
         string name_of_the_depositor, type_of_account;
