@@ -18,13 +18,13 @@ class Wallet {
             if(amount > 0){
                 balance += amount;
                 cout<<"Added "<<amount<<" to your wallet."<<endl;
-            } else {
+            } else{
                 cout<<"Invalid amount! Please enter a positive value."<<endl;
             }
         }
 
         void checkBalance(){
-            cout<<"Current balance: "<< balance<<endl;
+            cout<<"Current balance: "<<balance<<endl;
         }
 };
 
