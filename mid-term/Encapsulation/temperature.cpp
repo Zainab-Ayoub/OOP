@@ -6,8 +6,7 @@ using namespace std;
 
 class Temperature {
     private:
-        float celsius;
-        float fahrenheit;
+        float celsius, fahrenheit;
 
     public:
         Temperature() {
