@@ -30,10 +30,14 @@ class Product{
         }
 };
 
-int main() {         
+int main() {  
+    int x;
+    char y;       
     Product obj1;          
     Product obj2(50);      
-    Product obj3('A', 30); 
+    cout<<"Enter an integer and a character respectively: ";
+    cin>>x>>y;
+    Product obj3(y, x); 
     Product obj4(obj1);     
     Product obj5 = obj1;   
 
