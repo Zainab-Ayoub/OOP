@@ -19,7 +19,6 @@ public:
     }   
 
     void enroll() {
-        // Input validation for number of courses
         do {
             cout << "Enter number of courses you want to enroll (max 3): ";
             cin >> number_of_enrolled_courses;
@@ -91,7 +90,6 @@ public:
         float total_quality_points = 0;
         for (int i = 0; i < number_of_enrolled_courses; i++) {
             float point = 0;
-            // Grade point conversion
             if (grade[i] == "A") point = 4.0;
             else if (grade[i] == "A-") point = 3.67;
             else if (grade[i] == "B+") point = 3.33;
@@ -104,11 +102,9 @@ public:
             else if (grade[i] == "D") point = 1.00;
             else point = 0.00;
             
-            // Multiply grade points by credit hours
             total_quality_points += point * creditHours[i];
         }
         
-        // CGPA = Total Quality Points / Total Credit Hours
         float cgpa = total_quality_points / total_hours;
         return cgpa;
     }
@@ -117,7 +113,6 @@ public:
         cout << "Name: " << name << endl;
         cout << "Student ID: " << studentID << endl;
         
-        // Display course details
         for (int i = 0; i < number_of_enrolled_courses; i++) {
             cout << "Course " << i+1 << ": " 
                  << course_name[i] << ", Grade: " 
@@ -125,7 +120,6 @@ public:
                  << creditHours[i] << endl;
         }
         
-        // Calculate and display CGPA
         float final_cgpa = calculation();
         cout << "CGPA: " << final_cgpa << endl;
     }
