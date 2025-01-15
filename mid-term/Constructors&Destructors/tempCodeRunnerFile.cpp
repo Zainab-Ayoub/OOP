@@ -1,2 +1,1 @@
-
-using namespace std;
+time_point<high_resolution_clock>

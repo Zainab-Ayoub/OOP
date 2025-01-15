@@ -19,5 +19,7 @@ public:
 
 int main() {
     Session obj;  
-    for(int i=0; i<100000000; ++i);
+    for(int i=0; i<500000; ++i){
+        continue;
+    }
 }

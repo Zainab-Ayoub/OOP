@@ -1,27 +1,28 @@
-#include <chrono>
 #include <iostream>
+#include <ctime>
 using namespace std;
-using namespace std::chrono;
 
 class Timer {
 private:
-    time_point<high_resolution_clock> beg;
-    time_point<high_resolution_clock> end;
-
+    time_t startTime;
 public:
     Timer(){
-        beg = high_resolution_clock::now();
+        startTime = time(0);
+        cout<<"Timer started."<<endl;
     }
-    void displayElapsedTime(){
-        end = high_resolution_clock::now();
-        auto duration = duration_cast<microseconds>(end - beg);
-        cout << "Elapsed Time: " << duration.count() << " microseconds" << endl;
+    
+    void displayElapsed(){  
+        time_t currentTime = time(0);
+        cout<<"Duration: "<<currentTime - startTime<<" seconds."<<endl;
     }
 };
 
 int main() {
     Timer obj;
-    for (int i = 0; i < 50000; i++)
+
+    for(int i=0; i<500000; ++i){
         continue;
-    obj.displayElapsedTime();    
+    }
+    
+    obj.displayElapsed(); 
 }
