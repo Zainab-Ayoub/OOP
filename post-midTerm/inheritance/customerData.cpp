@@ -35,14 +35,20 @@ class preferredCustomer : public customerData{
                 discountLevel=6.0; 
             } else if(purchaseAmount >= 500){
                 discountLevel=5.0; 
+            } else{
+                discountLevel=0.0;
             }
         }  
         void displayCustomerData(){
             customerData :: displayCustomerData();
-            cout<<"Discount Level: "<<discountLevel<<endl;
+            cout<<"Purchase Amount: $"<<purchaseAmount<<endl;
+            cout<<"Discount Level: "<<discountLevel<<"%"<<endl;
         }
 };
 
 int main(){
-    
+    preferredCustomer obj;
+    cout<<"Press 1 to input data: "
+    obj.inputCustomerData();
+    obj.displayCustomerData();
 }
