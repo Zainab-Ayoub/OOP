@@ -1,3 +1,8 @@
+// Design a Product class with overloaded constructors 
+// to initialize products with either 
+// default values or custom values provided by the user.
+
+
 #include<iostream>
 using namespace std;
 

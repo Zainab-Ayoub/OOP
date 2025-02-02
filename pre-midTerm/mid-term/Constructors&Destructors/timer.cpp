@@ -1,3 +1,8 @@
+// Implement a Timer class that starts counting 
+// when an object is created. 
+// Add a method to display the elapsed time.
+
+
 #include <iostream>
 #include <ctime>
 using namespace std;

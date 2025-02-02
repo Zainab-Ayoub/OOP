@@ -1,3 +1,6 @@
+// Create a FileHandler class that opens a file when an object 
+// is instantiated and closes it when the object is destroyed
+
 #include <iostream>
 #include <fstream>
 using namespace std;

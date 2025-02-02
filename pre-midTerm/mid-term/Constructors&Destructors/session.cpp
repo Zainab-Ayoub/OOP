@@ -1,3 +1,7 @@
+// Write a Session class that logs the start time of 
+// a user session when an object is 
+// created and the end time when the object is destroyed.
+
 #include <iostream>
 #include <ctime>  
 using namespace std;
