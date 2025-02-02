@@ -48,7 +48,6 @@ class preferredCustomer : public customerData{
 
 int main(){
     preferredCustomer obj;
-    cout<<"Press 1 to input data: "
     obj.inputCustomerData();
     obj.displayCustomerData();
 }
