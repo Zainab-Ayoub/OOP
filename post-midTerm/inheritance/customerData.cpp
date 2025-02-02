@@ -9,7 +9,7 @@ class customerData{
 
 };
 
-class preferredCustomer{
+class preferredCustomer : public customerData{
     private:
         double purchaseAmount, discountLevel;
     public:    
