@@ -35,5 +35,5 @@ class C : public B{
 
 int main(){
 	C obj1;
-	obj1.set(5, 10, 15);
+	obj1.set(5,10,15);
 }
