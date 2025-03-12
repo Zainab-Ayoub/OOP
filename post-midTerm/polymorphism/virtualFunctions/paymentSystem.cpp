@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-class paymentMethod{,
+class paymentMethod{
     public:
         virtual void processPayment(double amount){
             cout<<"Processing payment of $"<<amount<<"using generic method.\n";
